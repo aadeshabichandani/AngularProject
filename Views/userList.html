@@ -1,0 +1,29 @@
+   
+<div ng-controller = 'userListStyleController' name = 'userListDiv' ng-controller = 'userListController' ng-repeat='user in users'>
+
+<div class = "containerDiv"  ng-repeat = "x in user.data">
+    <div class="childUsers" ui-sref = 'adminLog.editUsers({uid:$parent.$index,id:$index})' ng-style = 'roleStyle'>{{user.data[$index].first_name}} {{user.data[$index].last_name}}</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

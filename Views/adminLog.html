@@ -1,0 +1,11 @@
+<div class = "adminLogDiv" ng-controller = 'loginController'>
+    <p>
+        welcome admin {{emailLogin}}!
+        <p> <a ui-sref = 'adminLog.userList'>Users</a>
+            <a ui-sref = 'adminLog.dashboard'>Dashboard</a>
+        </p>
+        <p><a ui-sref = 'adminLog.logout'>Logout</a></p>
+        <ui-view></ui-view>
+        
+    </p>
+</div>

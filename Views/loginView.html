@@ -1,0 +1,54 @@
+<!doctype html>
+<html ng-app = 'heros'>
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../Styles/loginStyle.css">
+
+    </head>
+    <body>
+        <br>
+        <ui-view>
+        <div class="loginDiv" ng-controller = 'loginController'>
+            <h2>Login Page</h2>
+        <br>
+        <!-- <marquee>Welcome to our webpage!</marquee> -->
+        
+        <fieldset>
+            <legend>
+                Enter your details!
+            </legend>
+            <form name = 'myForm' class="loginForm">
+                <table class="tableClass">
+                    <tr>
+                        <td>Email : </td>
+                        <td class="emailClass"><input type="email" name = 'email' ng-model = "emailLogin" class="loginEmail" placeholder="Enter your email address here." required/><br><span ng-show="myForm.email.$invalid && myForm.email.$dirty">This email is not valid.</span></td>
+                    </tr>
+                    <tr>
+                        <td>Password : </td>
+                        <td class="passClass"><input type="password" name = 'password' class="loginPass" ng-model = "passLogin" placeholder="Enter your password here." required/></td>
+                    </tr>
+                </table>
+                <input type="submit" value="Submit"  ng-disabled="myForm.email.$dirty && myForm.email.$invalid ||
+                myForm.password.$invalid" ng-click = 'submitAction();'/>
+            </form>
+        </fieldset>
+        </div> </ui-view>
+        
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.min.js"></script>
+
+        <script src="../Scripts/mainModule.js"></script>
+        <script src="../Scripts/routing.js"></script>
+        <script src="../Scripts/Services/httpService.js"></script>
+        <script src="../Scripts/Controllers/loginController.js"></script>
+        <script src="../Scripts/Controllers/userListController.js"></script>
+        <script src="../Scripts/Controllers/userListStyleController.js"></script>
+        <script src="../Scripts/Controllers/editListController.js"></script>
+        <script src="../Scripts/Controllers/dashboardController.js"></script>
+        <script src="../Scripts/Services/credValidationService.js"></script>
+
+    </body>
+</html>
+        

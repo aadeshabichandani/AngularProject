@@ -1,0 +1,19 @@
+<div name = 'editUsersDiv'>
+    <form name = "myForm" novalidate>
+    <label> First Name : <input type="text" name = 'names' value="{{name}}" ng-model = 'name' required /> </label>
+    <br>
+    <label>Job : 
+            <select ng-model = 'job' name="options">
+                <option value="Engineer">Engineer</option>
+                <option value="Software-Dev">Software-Dev</option>
+                <option value="Android-Dev">Android-Dev</option>
+                <option value="IOS-Dev">IOS-Dev</option>
+           </select>
+           </label>
+           <br>
+    
+    <input type="button" value = 'Post'  ng-disabled="myForm.names.$dirty && myForm.names.$invalid ||
+    myForm.options.$pristine " ng-click = 'postData(name,job);'/>
+    <input type="button" value = 'back' ng-click = 'goBack();'/>
+</form>
+</div>

@@ -1,0 +1,5 @@
+
+<div class="dashboard" ng-repeat='user in users'>
+    <div class = "containerDivDash child"  ng-repeat = "x in user.data" ng-show="checkId(user.data[$index].id);" ui-sref = 'adminLog.editUsers({uid:$parent.$index,id:$index})'> {{user.data[$index].first_name}} {{user.data[$index].last_name}}
+    </div>
+</div>
